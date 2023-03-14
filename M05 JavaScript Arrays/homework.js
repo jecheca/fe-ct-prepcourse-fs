@@ -3,15 +3,13 @@
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
-   var primerElemento = array[0]
-   return (primerElemento)
+   return array[0]
 }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
-   var ultimoElemento= array[array.length - 1]
-   return (ultimoElemento)
+  return array[array.length -1]
 }
 
 function obtenerLargoDelArray(array) {
@@ -25,8 +23,7 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   var sumarUno = array.map((elemento) => elemento+1)
-   return sumarUno
+  return array.map((elemento) => elemento + 1)
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -85,9 +82,13 @@ function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-let suma = resultadosTest.reduce ((a, n) => (a += n, a), 0);
-var promedio = suma / resultadosTest.length
-return (promedio)
+var resultadoSuma = 0
+var promedios= 0
+for(i=0 ; i < resultadosTest.length; i++){
+   resultadoSuma = resultadoSuma + resultadosTest[i]
+   promedios= resultadoSuma / resultadosTest.length 
+}
+return promedios
 }
 
 function numeroMasGrande(arrayOfNums) {
@@ -96,7 +97,8 @@ function numeroMasGrande(arrayOfNums) {
    // Tu código:
    let mayor = 0
    for (let i=0; i<arrayOfNums.length;i++) {
-      if (arrayOfNums[i]>mayor) mayor = arrayOfNums[i]
+      if (arrayOfNums[i]>mayor) 
+      mayor = arrayOfNums[i]
    }
    return mayor
 }
@@ -119,8 +121,14 @@ function multiplicarArgumentos() {
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-let resultado = array.filter ((element) => element>18)
-return resultado.length
+   var contador = 0
+for(let i =0;i < array.length; i++){
+   if(array[i] > 18) {
+      contador ++
+   }
+}
+
+return contador
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -176,10 +184,10 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
 
+
    let arr=[0,1,2,3,4,5,6,7,8,9,10]
-   
-   let tablaSeis= arr.map(function(element){
-      return element * 6
+   let tablaSeis = arr.map(function (element){
+      return element*6
    })
    return tablaSeis
 }
